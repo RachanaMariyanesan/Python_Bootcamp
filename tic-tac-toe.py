@@ -14,7 +14,10 @@ def display_board(board):
     print(' '+ board[1]+ '  |  '+ board[2]+ '   |  '+board[3])
     print('    |      |')
 
-
+'''
+function that can take in a player input and assign their markers as 'x' or 'o'. 
+Think about using while loops ti continually ask until you ger acorrect answer.
+'''
 
 def player_input():
     marker=' '
@@ -27,12 +30,17 @@ def player_input():
     else:
         return ('O','X')
    
-
+'''
+ function that takes in the board list object, a marker ('X', 'O') and a disered position (number 1-9) and 
+ assigns it to the board
+'''
 def place_marker(board,marker,position):
     board[position]=marker
 
 
-
+'''
+function that takes in a board and checks to see if someone has won
+'''
 
 def win_check(board,mark):
     
@@ -54,17 +62,22 @@ def choose_first():
         return 'Player 2'
     else:
         return 'Player 1'
+'''
+function that returns a boolean indicating whether a space on the board is freely available
+'''
 
 def space_check(board,position):
     return board[position] == ' '
 
-
+'''function that checks if the board is full and returns a boolean avalue.True if full, False otherwise'''
 def full_board_check(board):
     for i in range(1,10):
         if space_check(board,i):
             return False
     return True
-
+'''function that asks for a player's next position (as a number 1-9) and
+then uses the function from step 6 to check if its a free position. If its, then return the position for later use
+'''
 def player_choice(board,player):
     position = 0
     
@@ -74,6 +87,7 @@ def player_choice(board,player):
     return position
     
 
+'''function that asks the player if they want to play again and returns a boolean True if they do want to play again.'''
 
 def replay():
     return input('Do you want to play  again? Enter Yes or No: ').lower().startswith('y')
