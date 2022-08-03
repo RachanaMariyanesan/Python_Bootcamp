@@ -16,7 +16,7 @@ def display_board(board):
 
 '''
 function that can take in a player input and assign their markers as 'x' or 'o'. 
-Think about using while loops ti continually ask until you ger acorrect answer.
+Think about using while loops continually ask until you ger acorrect answer.
 '''
 
 def player_input():
@@ -31,7 +31,7 @@ def player_input():
         return ('O','X')
    
 '''
- function that takes in the board list object, a marker ('X', 'O') and a disered position (number 1-9) and 
+ function that takes in the board list object, a marker ('X', 'O') and a disired position (number 1-9) and 
  assigns it to the board
 '''
 def place_marker(board,marker,position):
@@ -63,20 +63,20 @@ def choose_first():
     else:
         return 'Player 1'
 '''
-function that returns a boolean indicating whether a space on the board is freely available
+function that returns a boolean indicating whether a space on the board is free or available
 '''
 
 def space_check(board,position):
     return board[position] == ' '
 
-'''function that checks if the board is full and returns a boolean avalue.True if full, False otherwise'''
+'''function that checks if the board is full and returns a boolean value.True if full, False otherwise'''
 def full_board_check(board):
     for i in range(1,10):
         if space_check(board,i):
             return False
     return True
 '''function that asks for a player's next position (as a number 1-9) and
-then uses the function from step 6 to check if its a free position. If its, then return the position for later use
+then uses the function from step 6 to check if its a free position. If it's, then return the position for later use
 '''
 def player_choice(board,player):
     position = 0
